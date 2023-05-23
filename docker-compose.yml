@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+  web:
+    build: .
+    platform: linux/x86_64
+    command: zsh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - bundle_cache:/bundle
+      - .:/app
+      - /app/tmp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+volumes:
+  bundle_cache:
