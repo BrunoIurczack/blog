@@ -7,4 +7,7 @@ Rails.application.routes.draw do
     get 'welcome/index'
     root to: 'welcome#index'
   end
+
+  namespace :site do
+  end
 end
