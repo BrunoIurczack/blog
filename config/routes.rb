@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'welcome/index'
-  root to: 'welcome#index'
 
   namespace :admin do
-    get 'welcome/index'
-    root to: 'welcome#index'
+    root to: 'posts#index'
+    resource :posts
   end
 
-  namespace :site do
+  scope module: :site do
   end
+
+  root to: 'site/posts#index'
 end
