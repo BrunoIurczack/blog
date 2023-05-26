@@ -1,0 +1,22 @@
+= form_with(model: post, local: true) do |form|
+  - if coin.errors.any?
+    #error_explanation
+      h2
+        = pluralize(post.errors.count, "error")
+        |  prohibited this coin from being saved:
+      ul
+        - post.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :title 
+    = form.text_field :title 
+  .field
+    = form.label :resume
+    = form.text_field :resume
+  .field
+    = form.label :publication_date 
+    = form.text_field :publication_date 
+  .field
+    = form.label :content
+    = form.text_field :content
