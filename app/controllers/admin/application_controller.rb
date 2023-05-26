@@ -1,4 +1,6 @@
-class ApplicationController < ::ApplicationController
-  layout 'admin'
-  authenticate_user!
+module Admin
+  class ApplicationController < ::ApplicationController
+    layout 'admin'
+    before_action :authenticate_user!
+  end
 end

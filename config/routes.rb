@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'posts#index'
-    resource :posts
+    resources :posts
   end
 
   scope module: :site do
