@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
 
   scope module: :site do
+    get 'posts', to: 'posts#index'
+    get 'posts', to: 'posts#show'
   end
 
   root to: 'site/posts#index'

@@ -1,3 +1,5 @@
-class SiteController < ::ApplicationController
-  layout 'site'
+module Site
+  class ApplicationController < ::ApplicationController
+    layout 'site'
+  end
 end
