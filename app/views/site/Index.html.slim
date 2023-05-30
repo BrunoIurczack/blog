@@ -1,7 +1,7 @@
-p#notice
+p#notice 
   = notice
-h1 
-  | Posts
+h1
+  | Posts 
 
 .card-body.pt-0
     table.table.align-middle.table-row-dashed.fs-6.gy-5.dataTable.no-footer
@@ -29,8 +29,4 @@ h1
               = post.content 
             td
               = link_to t('links.show'), admin_post_path(post)
-              = link_to t('links.edit'), edit_admin_post_path(post)
-              = link_to t('links.delete'), admin_post_path(post), method: :delete, data: {confirm: t('links.are_you_sure')}
-br
-= link_to 'New post', new_admin_post_path
       
