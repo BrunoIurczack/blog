@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   end
 
   scope module: :site do
-    get 'posts', to: 'posts#index'
-    get 'posts/:id', to: 'posts#show'
+    resources :posts, only: %i[index show]
     root to: 'posts#index'
   end
 end
