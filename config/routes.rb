@@ -8,8 +8,7 @@ Rails.application.routes.draw do
 
   scope module: :site do
     get 'posts', to: 'posts#index'
-    get 'posts', to: 'posts#show'
+    get 'posts/:id', to: 'posts#show'
+    root to: 'posts#index'
   end
-
-  root to: 'site/posts#index'
 end

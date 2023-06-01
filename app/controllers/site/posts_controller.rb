@@ -1,6 +1,5 @@
 module Site
   class PostsController < ApplicationController
-
     def index
       @posts = Post.all
     end
@@ -8,6 +7,5 @@ module Site
     def show
       @post = Post.find(params[:id])
     end
-
   end
 end
