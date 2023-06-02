@@ -1,4 +1,11 @@
-= form_with(model: [:admin, post], local: true) do |form|
+= simple_form_for [:admin, post] do |f|
+  = f.input :title
+  = f.input :resume
+  = f.input :publication_date
+  = f.input :content
+  = f.button :submit
+
+/= form_with(model: [:admin, post], local: true) do |form|
   - if post.errors.any?
     #error_explanation
       h2
@@ -22,5 +29,5 @@
     = form.label :content
     = form.text_area :content
 
-  .actions
+  /.actions
     = form.submit class: "btn btn-sm fw-bold btn-success me-2 mb-2"
