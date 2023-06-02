@@ -1,7 +1,7 @@
 module Site
   class PostsController < ApplicationController
     def index
-      @posts = Post.all
+      @pagy, @records = pagy(Post.all)
     end
 
     def show

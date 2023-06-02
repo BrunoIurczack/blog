@@ -7,3 +7,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.create(email: "bruno@gmail.com", password: "123456")
+
+50.times do |i|
+  post = Post.find_or_create_by!(
+    title: "bla bla #{i}",
+    resume: "ghghghghghghghghghghghghghghghghghghghghghgh",
+    publication_date: Date.today,
+    content: "shdjqlfajdbf ojahfnkajkshfijafh jahfneifhais ihisdahdshdjdklsndkasddsiadj jhasbsjbfasbkjsbkab" 
+  )
+end
