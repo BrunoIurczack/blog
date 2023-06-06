@@ -22,11 +22,7 @@ html.no-js[lang="en"]
       | Stories - Personal Blog HTML Template
     meta[name="description" content=""]
     meta[name="viewport" content="width=device-width, initial-scale=1"]
-    link[rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.png"]
-    link[rel="stylesheet" href="assets/css/style.css"]
-    link[rel="stylesheet" href="assets/css/widgets.css"]
-    link[rel="stylesheet" href="assets/css/dark.css"]
-    link[rel="stylesheet" href="assets/css/responsive.css"]
+    = stylesheet_link_tag "site/application", "data-turbo-track": "reload"
   body.theme-mode
     .scroll-progress.primary-bg
     .preloader.text-center
@@ -1516,21 +1512,5 @@ html.no-js[lang="en"]
               | AliThemes
             |  | All rights reserved 
     .dark-mark
-    script[src="./assets/js/vendor/modernizr-3.6.0.min.js"]
-    script[src="./assets/js/vendor/jquery-3.6.0.min.js"]
-    script[src="./assets/js/vendor/popper.min.js"]
-    script[src="./assets/js/vendor/bootstrap.min.js"]
-    script[src="./assets/js/vendor/jquery.slicknav.js"]
-    script[src="./assets/js/vendor/slick.min.js"]
-    script[src="./assets/js/vendor/wow.min.js"]
-    script[src="./assets/js/vendor/jquery.ticker.js"]
-    script[src="./assets/js/vendor/jquery.vticker-min.js"]
-    script[src="./assets/js/vendor/jquery.scrollUp.min.js"]
-    script[src="./assets/js/vendor/jquery.nice-select.min.js"]
-    script[src="./assets/js/vendor/jquery.magnific-popup.js"]
-    script[src="./assets/js/vendor/jquery.sticky.js"]
-    script[src="./assets/js/vendor/perfect-scrollbar.js"]
-    script[src="./assets/js/vendor/waypoints.min.js"]
-    script[src="./assets/js/vendor/jquery.theia.sticky.js"]
-    script[src="./assets/js/main.js"]
+    = javascript_include_tag :application
     = yield
