@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'posts#index'
     resources :posts
+    resources :categories
   end
 
   scope module: :site do
