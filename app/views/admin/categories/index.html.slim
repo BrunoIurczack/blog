@@ -1,0 +1,21 @@
+p#notice
+  = notice
+h1 
+  | Categorie 
+
+.card-body.pt-0 
+  table.table.align-middle.table-row-dashed.fs-6.gy-5.dataTable.no-footer
+    thead.border-bottom.border-gray-200.fs-6.fw-bold.bg-lighte
+      tr 
+        th 
+          = @records.human_attribute_name(:name)
+    tbody
+      -  @records.each do |categorie|
+        tr 
+          td 
+            = categorie.title 
+          td
+            = link_to t('links.show'), admin_categorie_path(categorie)
+            = link_to t('links.edit'), edit_admin_categorie_path(categorie)
+            = link_to t('links.delete'), admin_categorie_path(categorie), method: :delete, data: {confirm: t('links.are_you_sure')}
+  
