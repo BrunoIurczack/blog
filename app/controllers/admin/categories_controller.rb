@@ -1,4 +1,4 @@
-module admin
+module Admin
   class CategoriesController < ApplicationController
     before_action :set_categorie, only: %i[ show edit update destroy ]
 
