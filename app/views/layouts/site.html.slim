@@ -43,9 +43,7 @@ html[lang="en" data-bs-theme="auto"]
         path[fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"]
     = render partial: 'layouts/site/menu'
     main.container
-      = render partial: 'layouts/site/main_post' 
-      = render partial: 'layouts/site/secondary'
-      = render partial: 'layouts/site/content'
+      = yield
     footer.py-5.text-center.text-body-secondary.bg-body-tertiary
       p
         | Blog template built for 
@@ -58,6 +56,5 @@ html[lang="en" data-bs-theme="auto"]
       p.mb-0
         a[href="#"]
           | Back to top
-    = javascript_include_tag :application
-    = yield
+    = javascript_include_tag :application    
     

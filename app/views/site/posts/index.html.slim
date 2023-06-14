@@ -1,6 +1,9 @@
-h1
+= render partial: 'layouts/site/main_post' 
+= render partial: 'layouts/site/secondary'
+= render partial: 'layouts/site/content', locals: { records: @records }
+/h1
   | Posts 
-.card-body.pt-0
+/.card-body.pt-0
   table.table.align-middle.table-row-dashed.fs-6.gy-5.dataTable.no-footer
     thead.border-bottom.border-gray-200.fs-6.fw-bold.bg-lighte 
       tr 
