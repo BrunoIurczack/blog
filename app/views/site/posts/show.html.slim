@@ -1,20 +1,11 @@
-p#notice 
-  = notice 
-p
-  strong
-    | Title 
-  = @post.title
-p
-  strong
-    | Resume
-  = @post.resume
-p
-  strong
-    | Publication Date 
-  = @post.publication_date 
-p
-  strong
-    | Publication Date 
-  = @post.content
-
-= link_to 'Back', posts_path
+article.blog-post
+  h2.display-5.link-body-emphasis.mb-1
+    = @post.title
+  p.blog-post-meta
+    = @post.publication_date 
+  p
+    = @post.resume
+  hr
+  p
+    = @post.content
+  
