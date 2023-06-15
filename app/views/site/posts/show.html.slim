@@ -3,6 +3,8 @@ article.blog-post
     = @post.title
   p.blog-post-meta
     = @post.publication_date 
+  p.blog-post-meta
+    = @post.category.name
   p
     = @post.resume
   hr
