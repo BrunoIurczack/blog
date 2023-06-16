@@ -3,6 +3,7 @@
   = f.input :resume
   = f.input :publication_date
   = f.input :content
+  = f.association :category
   = f.button :submit
 
 /= form_with(model: [:admin, post], local: true) do |form|
