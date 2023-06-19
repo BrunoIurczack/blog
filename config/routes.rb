@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   scope module: :site do
     resources :posts, only: %i[index show]
-    get 'categories/:id', to: 'categories#index', as: :category
+    get 'categories/:id', to: 'categories#show', as: :category
     root to: 'posts#index'
   end
 end

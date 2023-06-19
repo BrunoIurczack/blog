@@ -1,0 +1,12 @@
+h2
+  = @category.name
+hr
+- @posts.each do |post|
+  article.blog-post
+    h2.display-5.link-body-emphasis.mb-1
+      = post.title
+    p.blog-post-meta
+      = post.publication_date 
+    p
+      = post.resume
+    hr
