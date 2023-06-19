@@ -12,10 +12,12 @@ h1
     tbody
       -  @records.each do |categorie|
         tr 
-          td 
+          td  
             = categorie.title 
           td
             = link_to t('links.show'), admin_categorie_path(categorie)
             = link_to t('links.edit'), edit_admin_categorie_path(categorie)
             = link_to t('links.delete'), admin_categorie_path(categorie), method: :delete, data: {confirm: t('links.are_you_sure')}
-  
+
+br
+= raw(pagy_nav(@pagy)) if @pagy.pages > 1

@@ -10,3 +10,6 @@ hr
     p
       = post.resume
     hr
+br
+= raw(pagy_nav(@pagy)) if @pagy.pages > 1
+  
