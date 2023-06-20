@@ -43,7 +43,7 @@ module Admin
       end
 
       def post_params
-        params.require(:post).permit(:title, :resume, :publication_date, :content)
+        params.require(:post).permit(:title, :resume, :publication_date, :content,  :category_id, :hignlight)
       end
   end
 end
