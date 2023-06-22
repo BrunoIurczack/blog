@@ -20,6 +20,7 @@ end
     category: Category.find(rand(1..10)),
     resume: "ghghghghghghghghghghghghghghghghghghghghghgh",
     publication_date: Date.today,
-    content: "shdjqlfajdbf ojahfnkajkshfijafh jahfneifhais ihisdahdshdjdklsndkasddsiadj jhasbsjbfasbkjsbkab" 
+    content: "shdjqlfajdbf ojahfnkajkshfijafh jahfneifhais ihisdahdshdjdklsndkasddsiadj jhasbsjbfasbkjsbkab",
+    highlight: ([nil] + Post.highlights.keys).sample
   )
 end

@@ -16,6 +16,10 @@ p
   strong
     | Publication Date 
   = @post.content
+p
+  strong
+    | Category
+  = @post.category_id
   
 = link_to 'Edit', edit_admin_post_path(@post)
 |  | 

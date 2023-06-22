@@ -27,6 +27,8 @@ h1
             = post.publication_date 
           td 
             = post.content 
+          td 
+            = post.category_id
           td
             = link_to t('links.show'), admin_post_path(post)
             = link_to t('links.edit'), edit_admin_post_path(post)
