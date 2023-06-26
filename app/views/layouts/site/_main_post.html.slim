@@ -1,9 +1,13 @@
-.p-4.p-md-5.mb-4.rounded.text-body-emphasis.bg-body-secondary
-  .col-lg-6.px-0
-    h1.display-4.fst-italic
-      | Title of a longer featured blog post
-    p.lead.my-3
-      | Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.
-    p.lead.mb-0
-      a.text-body-emphasis.fw-bold[href="#"]
-        | Continue reading...
+- if @main.present?
+  .p-4.p-md-5.mb-4.rounded.text-body-emphasis.bg-body-secondary
+    .col-lg-6.px-0
+      h1.display-4.fst-italic
+        = @main.title
+      .mb-1.text-body-secondary
+        = @main.publication_date
+      p.card-text.mb-auto
+        = @main.resume
+      a.icon-link.gap-1.icon-link-hover.stretched-link[href="#"]
+        |  Continue reading 
+        svg.bi
+          use[xlink:href="#chevron-right"]
