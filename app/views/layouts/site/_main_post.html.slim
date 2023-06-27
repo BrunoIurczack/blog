@@ -7,7 +7,4 @@
         = @main.publication_date
       p.card-text.mb-auto
         = @main.resume
-      a.icon-link.gap-1.icon-link-hover.stretched-link[href="#"]
-        |  Continue reading 
-        svg.bi
-          use[xlink:href="#chevron-right"]
+      = link_to t('links.Continue'), post_path(@main), class: "icon-link.gap-1.icon-link-hover.stretched-link"

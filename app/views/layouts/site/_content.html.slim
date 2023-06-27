@@ -10,7 +10,10 @@
           | #{l record.publication_date} by 
           /a[href="#"]
             | Mark
-        p= record.resume
+        p
+          = record.resume
+        p
+          = link_to t('links.Continue'), post_path(record)
 
     = raw(pagy_nav(@pagy)) if @pagy.pages > 1
     /nav.blog-pagination[aria-label="Pagination"]
@@ -19,3 +22,4 @@
       a.btn.btn-outline-secondary.rounded-pill.disabled
         | Newer
   = render partial:'layouts/site/side'
+  
