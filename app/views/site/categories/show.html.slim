@@ -9,7 +9,10 @@ hr
       = post.publication_date 
     p
       = post.resume
+    p 
+      = link_to t('continue'), post_path(post)
     hr
+  
 br
 = raw(pagy_nav(@pagy)) if @pagy.pages > 1
   
