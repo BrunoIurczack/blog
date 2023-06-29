@@ -19,7 +19,7 @@ end
     title: "bla bla #{i}",
     category: Category.find(rand(1..10)),
     resume: "ghghghghghghghghghghghghghghghghghghghghghgh",
-    publication_date: Date.today,
+    publication_date: Time.new.months_ago((0..12).to_a.sample),
     content: "shdjqlfajdbf ojahfnkajkshfijafh jahfneifhais ihisdahdshdjdklsndkasddsiadj jhasbsjbfasbkjsbkab",
     highlight: ([nil] + Post.highlights.keys).sample
   )
