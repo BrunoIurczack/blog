@@ -14,58 +14,16 @@
                 = post.publication_date
               p.card-text.mb-auto
                 = post.resume 
-              p=link_to t('Continue'), post_path(post)
+              =link_to t('Continue'), post_path(post)
           hr
     .p-4
       h4.fst-italic
         | Archives
       ol.list-unstyled.mb-0
-        li
+        - (0..12).to_a.each do |m|
+          li
+            a href="" 
+              = Time.new.months_ago(m).strftime('%B %Y')
+        /li
           a[href="#"]
             | March 2021
-        li
-          a[href="#"]
-            | February 2021
-        li
-          a[href="#"]
-            | January 2021
-        li
-          a[href="#"]
-            | December 2020
-        li
-          a[href="#"]
-            | November 2020
-        li
-          a[href="#"]
-            | October 2020
-        li
-          a[href="#"]
-            | September 2020
-        li
-          a[href="#"]
-            | August 2020
-        li
-          a[href="#"]
-            | July 2020
-        li
-          a[href="#"]
-            | June 2020
-        li
-          a[href="#"]
-            | May 2020
-        li
-          a[href="#"]
-            | April 2020
-    .p-4
-      h4.fst-italic
-        | Elsewhere
-      ol.list-unstyled
-        li
-          a[href="#"]
-            | GitHub
-        li
-          a[href="#"]
-            | Twitter
-        li
-          a[href="#"]
-            | Facebook
