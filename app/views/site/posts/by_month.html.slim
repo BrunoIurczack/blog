@@ -1,0 +1,15 @@
+- @records.each do |record|
+  article.blog-post
+    h2.display-5.link-body-emphasis.mb-1
+      = record.title
+    p.blog-post-meta
+      = record.publication_date 
+    p.blog-post-meta
+      = record.category.name
+    p
+      = record.resume
+    hr
+    p
+      = record.content
+    
+= raw(pagy_nav(@pagy)) if @pagy.pages > 1

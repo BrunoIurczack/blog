@@ -22,8 +22,9 @@
       ol.list-unstyled.mb-0
         - (0..12).to_a.each do |m|
           li
-            a href="" 
-              = Time.new.months_ago(m).strftime('%B %Y')
+            - time = Time.new.months_ago(m)
+            = link_to time.strftime('%B %Y'), by_month_posts_path(date: time.strftime('%Y-%m'))
+              
         /li
           a[href="#"]
             | March 2021

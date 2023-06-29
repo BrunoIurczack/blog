@@ -19,5 +19,10 @@ module Site
     def show
       @post = Post.find(params[:id])
     end
+
+    def by_month
+      date = Date.strptime(params[:date], '%Y-%m')
+      @pagy, @records = pagy(Post.where("publication_date between ? and ?", date.beginning_of_month, date.end_of_month).all)
+    end
   end
 end

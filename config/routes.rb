@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
 
   scope module: :site do
-    resources :posts, only: %i[index show]
+    resources :posts, only: %i[index show] do
+      get 'by_month', on: :collection
+    end
     get 'categories/:id', to: 'categories#show', as: :category
     root to: 'posts#index'
   end
