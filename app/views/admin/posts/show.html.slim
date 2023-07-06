@@ -20,6 +20,8 @@ p
   strong
     | Category
   = @post.category_id
+p
+ = image_tag @post.image.variant(:thumb)
   
 = link_to 'Edit', edit_admin_post_path(@post)
 |  | 

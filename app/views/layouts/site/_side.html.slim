@@ -8,6 +8,7 @@
         - @side.each do |post|
           li
             col-lg-8
+              = image_tag post.image.variant(:thumb_2)
               h6.mb-0
                 = post.title
               .mb-1.text-body-secondary
@@ -16,6 +17,9 @@
                 = post.resume 
               =link_to t('Continue'), post_path(post)
           hr
+          li
+  
+          
     .p-4
       h4.fst-italic
         | Archives

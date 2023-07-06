@@ -16,6 +16,7 @@ module Admin
 
     def create
       @post = Post.new(post_params)
+      @post.image.attach(params[:post][:image]) if params[:post][:image].present?
 
       if @post.save
         redirect_to admin_post_url(@post), notice: "Post was successfully created."  
@@ -26,6 +27,7 @@ module Admin
 
     def update
       if @post.update(post_params)
+        @post.image.attach(params[:post][:image]) if params[:post][:image].present?
         redirect_to admin_post_url(@post), notice: "Post was successfully updated."
       else
         render :edit, status: :unprocessable_entity
@@ -43,7 +45,7 @@ module Admin
       end
 
       def post_params
-        params.require(:post).permit(:title, :resume, :publication_date, :content,  :category_id, :hignlight)
+        params.require(:post).permit(:title, :resume, :publication_date, :content,  :category_id, :hignlight, :image)
       end
   end
 end

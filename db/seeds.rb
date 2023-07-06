@@ -15,12 +15,14 @@ User.create(email: "bruno@gmail.com", password: "123456")
 end
 
 50.times do |i|
-  Post.find_or_create_by!(
+  post = Post.find_or_create_by!(
     title: "bla bla #{i}",
     category: Category.find(rand(1..10)),
-    resume: "ghghghghghghghghghghghghghghghghghghghghghgh",
+    resume: "ghghghgh ghghghghghg hghghghghghgh ghghghg hghgh",
     publication_date: Time.new.months_ago((0..12).to_a.sample),
     content: "shdjqlfajdbf ojahfnkajkshfijafh jahfneifhais ihisdahdshdjdklsndkasddsiadj jhasbsjbfasbkjsbkab",
     highlight: ([nil] + Post.highlights.keys).sample
   )
+  file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3N-Bv48OoBlHMlRWICZoVDyPNA_1bdqB47A&usqp=CAU.jpg')
+  post.image.attach(io: file, filename: 'cau.jpg')
 end

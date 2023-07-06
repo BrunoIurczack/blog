@@ -5,6 +5,7 @@
   = f.input :publication_date
   = f.input :content
   = f.association :category
+  = f.file_field :image
   = f.input :highlight, collection: Post.highlights.keys
   = f.error :base
   = f.button :submit
