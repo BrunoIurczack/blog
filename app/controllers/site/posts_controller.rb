@@ -24,5 +24,18 @@ module Site
       date = Date.strptime(params[:date], '%Y-%m')
       @pagy, @records = pagy(Post.where("publication_date between ? and ?", date.beginning_of_month, date.end_of_month).all)
     end
+
+    def search
+      @term = search_param[:t]
+      @pagy, @records = pagy(
+        (Post.where("title ilike ?", "%#{search_param[:t]}%")).or(Post.where("resume ilike ?", "%#{search_param[:t]}%")).or(Post.where("content ilike ?", "%#{search_param[:t]}%"))
+      )
+    end
+
+    private
+
+    def search_param
+      params.require(:search).permit(:t)
+    end
   end
 end

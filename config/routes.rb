@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'by_month', on: :collection
     end
     get 'categories/:id', to: 'categories#show', as: :category
+    get 'search', to: 'posts#search', as: :search
     root to: 'posts#index'
   end
 end

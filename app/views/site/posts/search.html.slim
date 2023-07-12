@@ -1,0 +1,17 @@
+h2
+  = @term
+hr
+  - @records.each do |post|
+    article.blog-post
+      h2.display-5.link-body-emphasis.mb-1
+        = post.title
+      p.blog-post-meta
+        = post.resume
+      p
+        = post.content
+      p 
+        = link_to t('continue'), post_path(post)
+      hr
+  
+br
+= raw(pagy_nav(@pagy)) if @pagy.pages > 1
